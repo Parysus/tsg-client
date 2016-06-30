@@ -9,14 +9,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MrPain992/thatsexygame-client.git"
+    "url": "git+https://github.com/Parysus/tsg-client.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/MrPain992/thatsexygame-client/issues"
+    "url": "https://github.com/Parysus/tsg-client/issues"
   },
-  "homepage": "https://github.com/MrPain992/thatsexygame-client#readme",
+  "homepage": "https://github.com/Parysus/tsg-client#readme",
   "dependencies": {
     "electron-drag": "^1.2.0",
     "electron-prebuilt": "^1.2.2",
