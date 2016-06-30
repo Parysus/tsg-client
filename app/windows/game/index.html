@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>TITEL</title>
+  <link href="css/stylesheet.css" rel="stylesheet" type="text/css"/>
+  <script src="js/jquery-fallback.js"></script>
+  <script>
+    window.$ = window.jQuery = require('jQuery');
+
+    window.addEventListener("load", function(){
+      getScript('js/windowinit.js', function(){
+        console.log('windowinit.js loaded');
+      });
+    });
+
+  </script>
+</head>
+<body>
+  <div class="gameContainer">
+    <div class="gamePanel">
+    </div>
+    <div class="overlayContainer">
+      <div class="playerInformation">
+        <div class="championContainer">
+          <div class="champ-info">
+            <div class="champ-avatar">
+              <span class="champ-level">30</span>
+            </div>
+            <div class="champ-exp"></div>
+          </div>
+          <div class="utility-info">
+            <div class="utility-spells">
+              <div class="spell" id="s-atk" data-level="0">
+                <div class="s-level">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <span>Q</span>
+              </div>
+              <div class="spell" id="s-uti" data-level="0">
+                <div class="s-level">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <span>W</span>
+              </div>
+              <div class="spell" id="s-def" data-level="0">
+                <div class="s-level">
+                  <span></span><span></span><span></span><span></span><span></span>
+                </div>
+                <span>E</span>
+              </div>
+              <div class="spell" id="s-ult" data-level="0">
+                <div class="s-level">
+                  <span></span><span></span><span>
+                </div>
+                <span>R</span>
+              </div>
+            </div>
+            <div class="utility-mana"><span class="mana-counter" id="u-current">100</span>
+               / <span class="mana-counter" id="u-all">100</span></div>
+          </div>
+        </div>
+        <div class="resourcesContainer">
+          <div class="resource" id="r-wood">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>10000</span>
+            </div>
+            <div class="res-inc">
+              <span>10</span>
+            </div>
+          </div>
+          <div class="resource" id="r-iron">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>1000</span>
+            </div>
+            <div class="res-inc">
+              <span>100</span>
+            </div>
+          </div>
+          <div class="resource" id="r-crys">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>999999</span>
+            </div>
+            <div class="res-inc">
+              <span>100</span>
+            </div>
+          </div>
+          <div class="resource" id="r-ener">
+            <div class="res-cur">
+                <span class="res-icon"></span>
+                <span>999999</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="gameControl">
+        <div class="mapContainer">
+          <div class="mapDisplay"></div>
+        </div>
+        <div class="buildingInformation">
+          <div class="buildingInformationInteraction">
+            <div class="buildingTitle">
+              <span class="b-title">Tartak</span>
+              <span class="b-lvl">2</span></div>
+            <div class="buildingAction">
+              <div class="buildingUpgradeButton">Upgrade</div>
+              <div class="buildingDestroyButton">Destroy</div>
+            </div>
+          </div>
+          <div class="buildingInformationVisual">
+            <div class="buildingPreview">
+              <div class="buildingImage"></div>
+              <div class="buildingQueueInformation">
+                <div class="productionPreview"></div>
+                <div class="productionTimer">00:00:00</div>
+              </div>
+            </div>
+            <div class="buildingProductionSelection">
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+              <div class="mode" id="mode_name"></div>
+            </div>
+          </div>
+        </div>
+        <div class="buildingSelection">
+          <div class="buildingContainer">
+            <div class="buildingSlot" data-building="army-1"></div>
+            <div class="buildingSlot"></div>
+            <div class="buildingSlot"></div>
+            <div class="buildingSlot"></div>
+            <div class="buildingSlot"></div>
+            <div class="buildingSlot"></div>
+            <div class="buildingSlot"></div>
+            <div class="buildingSlot"></div>
+          </div>
+          <div class="buildingList">
+            <div class="building" id="b-wood" data-building="wood"></div>
+            <div class="building" id="b-iron" data-building="iron"></div>
+            <div class="building" id="b-crys" data-building="crystal"></div>
+            <div class="building" id="b-army"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

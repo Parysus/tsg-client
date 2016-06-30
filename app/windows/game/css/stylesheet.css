@@ -1,0 +1,339 @@
+@import url('reset.css');
+
+html {
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family: Tahoma, Geneva, sans-serif;
+}
+
+*,*:after,*:before {
+  box-sizing: inherit;
+  -moz-box-sizing: inherit;
+  -webkit-box-sizing: inherit;
+}
+
+/*Debuging*/
+
+.gamePanel, .overlayContainer {
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.gamePanel {
+  background-color: lightgreen;
+}
+
+.overlayContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* ========== Player information ========== */
+/* Main */
+.playerInformation {
+  display: flex;
+  justify-content: space-between;
+}
+
+/* Champion information */
+.championContainer {
+  display: flex;
+  flex-direction: row;
+  width: 370px;
+  height: 85px;
+}
+
+.champ-avatar {
+  background-color: yellow;
+  position: relative;
+  width: 70px;
+  height: 70px;
+}
+
+.champ-level {
+  background-color: black;
+  position: absolute;
+  color: white;
+  padding: 5px;
+  min-width: 27px;
+  text-align: center;
+  bottom: 0;
+  right: 0;
+}
+
+.champ-exp {
+  background-color: blue;
+  position: relative;
+  width: 70px;
+  height: 15px;
+}
+
+.utility-spells {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 20px;
+  width: 300px;
+}
+
+.spell{
+  background-color: yellow;
+  display: inline-block;
+  position: relative;
+  width: 50px;
+  height: 50px;
+}
+
+.spell > span {
+  background-color: black;
+  color: white;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  min-width: 15px;
+  padding: 3px 0;
+  font-size: 10px;
+}
+
+.spell .s-level {
+  padding: 0 2px 2px 2px;
+  width: 36px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  left: 0;
+  bottom:0;
+}
+
+.spell .s-level>span{
+  background-color: purple;
+  display: inline-block;
+  flex: auto;
+  height: 14px;
+  margin-right: 1px;
+}
+
+.spell .s-level>span.lvlup {
+  background-color: silver;
+}
+
+.utility-mana {
+  background-color: purple;
+  width: 300px;
+  height: 15px;
+  color: white;
+  text-align: center;
+  font-size: 12px;
+  padding-top: 1px;
+}
+
+/* Resources information */
+.resourcesContainer {
+  background-color: red;
+  display: flex;
+  flex-direction: row;
+  width: 330px;
+  height: 50px;
+  padding: 5px;
+  font-size: 14px;
+}
+
+.res-cur, .res-inc {
+  width: 70px;
+}
+
+.res-inc {
+  padding-left: 5px;
+  padding-top: 3px;
+}
+
+.res-inc span:before {
+  content: '+ ';
+}
+
+.res-icon {
+  background-color: black;
+  display: inline-block;
+  margin-right: 5px;
+  width: 14px;
+  height: 14px;
+  float: left;
+}
+
+.resource {
+  margin: 5px;
+}
+
+/* ========== Game control ========== */
+/* Map */
+.gameControl {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+.mapContainer {
+  background-color: red;
+  width: 200px;
+  height: 200px;
+  padding: 10px;
+}
+
+.mapDisplay {
+  background-color: yellow;
+  width: 100%;
+  height: 100%;
+}
+
+/* Building information */
+.buildingInformation {
+  background-color: red;
+  width: 500px;
+  height: 250px;
+  margin-bottom: -100%;
+  padding: 10px;
+}
+
+.buildingInformationInteraction {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+}
+
+.buildingTitle {
+  font-size: 20px;
+  padding: 10px 0;
+}
+
+.buildingTitle .b-lvl:before {
+  content: " (";
+}
+
+.buildingTitle .b-lvl:after {
+  content: ") ";
+}
+
+.buildingAction div {
+  float: left;
+  font-size: 15px;
+}
+
+.buildingUpgradeButton, .buildingDestroyButton {
+  background-color: lightblue;
+  width: 100px;
+  margin-left: 10px;
+  text-align: center;
+  padding: 10px;
+}
+.buildingImage, .buildingDescription {
+  float: left;
+}
+
+.buildingPreview {
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buildingImage {
+  background-color: yellow;
+  width: 100px;
+  height: 100px;
+}
+
+.buildingQueueInformation {
+  background-color: yellow;
+  width: 210px;
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-direction: column;
+}
+.productionPreview {
+  background-color: purple;
+  width: 50px;
+  height: 50px;
+}
+
+.buildingProductionSelection {
+  background-color: lightblue;
+  width: 100%;
+  height: 60px;
+  padding: 10px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.buildingProductionSelection .mode {
+  background-color: purple;
+  width: 40px;
+  height: 40px;
+}
+
+.info-show {
+  margin-bottom: 0;
+}
+
+/* Building list */
+.buildingSelection {
+  background: green;
+  width: 210px;
+  height: 170px;
+  position: relative;
+}
+
+.buildingContainer, .buildingList {
+  padding: 10px;
+  position: absolute;
+}
+
+.buildingContainer {
+  background-color: red;
+  width: 210px;
+  height: 110px;
+  bottom: -50px;
+}
+
+.list-show {
+  bottom: auto;
+}
+
+.buildingList {
+  background-color: blue;
+  width: 210px;
+  height: 60px;
+  bottom: 0;
+}
+
+.buildingSlot, .building {
+  background-color: yellow;
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+.building-selected {
+  box-shadow: 0px 4px 4px green;
+}
+.buildinglist-selected {
+  box-shadow: 0px 4px 4px red;
+}
+
+.buildingSlot:nth-child(4n), .building:nth-child(4n){
+  margin-right: 0px;
+}
+
+
+
+/*Debug*/
+.championContainer {
+  background-color: red;
+}
